@@ -1,0 +1,8 @@
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Infra.CrossCutting\bin\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.deps.json
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Infra.CrossCutting\bin\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.dll
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Infra.CrossCutting\bin\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.pdb
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Infra.CrossCutting\obj\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.csprojAssemblyReference.cache
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Infra.CrossCutting\obj\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Infra.CrossCutting\obj\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.AssemblyInfo.cs
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Infra.CrossCutting\obj\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.dll
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Infra.CrossCutting\obj\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.pdb

@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  digital-bank-api:
+    image: digital-bank-api
+    container_name: digital-bank-api
+    ports:
+      - 5000:80
+    build:
+      context: .
+      dockerfile: src/DigitalBank.Services.Api/Dockerfile
+  mongo:
+    image: mongo
+    container_name: digital-bank-mongo
+    ports:
+      - "27017:27017"
+  mongo-express:
+    image: mongo-express
+    container_name: digital-bank-mongo-express
+    ports:
+      - '8081:8081'
+    depends_on:
+      - mongo

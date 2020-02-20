@@ -1,0 +1,13 @@
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\bin\Debug\netcoreapp3.1\DigitalBank.Domain.deps.json
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\bin\Debug\netcoreapp3.1\DigitalBank.Domain.dll
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\bin\Debug\netcoreapp3.1\DigitalBank.Domain.pdb
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\bin\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.dll
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\bin\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.Ioc.dll
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\bin\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.Ioc.pdb
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\bin\Debug\netcoreapp3.1\DigitalBank.Infra.CrossCutting.pdb
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\obj\Debug\netcoreapp3.1\DigitalBank.Domain.csprojAssemblyReference.cache
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\obj\Debug\netcoreapp3.1\DigitalBank.Domain.AssemblyInfoInputs.cache
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\obj\Debug\netcoreapp3.1\DigitalBank.Domain.AssemblyInfo.cs
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\obj\Debug\netcoreapp3.1\DigitalBank.Domain.csproj.CopyComplete
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\obj\Debug\netcoreapp3.1\DigitalBank.Domain.dll
+C:\Users\jgomes\source\repos\DigitalBank\src\DigitalBank.Domain\obj\Debug\netcoreapp3.1\DigitalBank.Domain.pdb

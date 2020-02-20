@@ -1,0 +1,295 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Application.AppServices\\DigitalBank.Application.AppServices.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Application.AppServices\\DigitalBank.Application.AppServices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Application.AppServices\\DigitalBank.Application.AppServices.csproj",
+        "projectName": "DigitalBank.Application.AppServices",
+        "projectPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Application.AppServices\\DigitalBank.Application.AppServices.csproj",
+        "packagesPath": "C:\\Users\\jgomes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Application.AppServices\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jgomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://directoneapp.pkgs.visualstudio.com/_packaging/RogueOne/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine2/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Domain\\DigitalBank.Domain.csproj": {
+                "projectPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Domain\\DigitalBank.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Domain\\DigitalBank.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Domain\\DigitalBank.Domain.csproj",
+        "projectName": "DigitalBank.Domain",
+        "projectPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Domain\\DigitalBank.Domain.csproj",
+        "packagesPath": "C:\\Users\\jgomes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jgomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://directoneapp.pkgs.visualstudio.com/_packaging/RogueOne/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine2/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting.Ioc\\DigitalBank.Infra.CrossCutting.Ioc.csproj": {
+                "projectPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting.Ioc\\DigitalBank.Infra.CrossCutting.Ioc.csproj"
+              },
+              "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting\\DigitalBank.Infra.CrossCutting.csproj": {
+                "projectPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting\\DigitalBank.Infra.CrossCutting.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Azure.WebJobs": {
+              "target": "Package",
+              "version": "[3.0.14, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.10.2, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.10.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting.Ioc\\DigitalBank.Infra.CrossCutting.Ioc.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting.Ioc\\DigitalBank.Infra.CrossCutting.Ioc.csproj",
+        "projectName": "DigitalBank.Infra.CrossCutting.Ioc",
+        "projectPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting.Ioc\\DigitalBank.Infra.CrossCutting.Ioc.csproj",
+        "packagesPath": "C:\\Users\\jgomes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting.Ioc\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jgomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://directoneapp.pkgs.visualstudio.com/_packaging/RogueOne/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine2/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting\\DigitalBank.Infra.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting\\DigitalBank.Infra.CrossCutting.csproj",
+        "projectName": "DigitalBank.Infra.CrossCutting",
+        "projectPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting\\DigitalBank.Infra.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\jgomes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jgomes\\source\\repos\\DigitalBank\\src\\DigitalBank.Infra.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jgomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://directoneapp.pkgs.visualstudio.com/_packaging/RogueOne/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/directoneapp/_packaging/OneToOneEngine2/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
