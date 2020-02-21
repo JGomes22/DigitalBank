@@ -42,59 +42,66 @@ namespace DigitalBank.UnitTest
         {
 
             _lancamentoRepository.InsertAsync(null, Arg.Any<CancellationToken>()).Returns(Task.FromResult(string.Empty));
-            _lancamentoRepository.InsertAsync(Arg.Is<Lancamento>(x => x.Id == "0"), Arg.Any<CancellationToken>()).Returns(Task.FromResult(string.Empty));
-            _lancamentoRepository.InsertAsync(Arg.Is<Lancamento>(x => x.Id == "ABC"), Arg.Any<CancellationToken>()).Returns(Task.FromResult("ABC"));
+            _lancamentoRepository.InsertAsync(Arg.Is<Lancamento>(x => x.Id == "000000"), Arg.Any<CancellationToken>()).Returns(Task.FromResult(string.Empty));
+            _lancamentoRepository.InsertAsync(Arg.Is<Lancamento>(x => x.Id == "000001"), Arg.Any<CancellationToken>()).Returns(Task.FromResult("000001"));
 
 
-            _lancamentoRepository.GetByIdAsync("0").Returns(Task.FromResult(default(Lancamento)));
-            _lancamentoRepository.GetByIdAsync("1").Returns(Task.FromResult(new Lancamento()
+            _lancamentoRepository.GetByIdAsync("000002").Returns(Task.FromResult(default(Lancamento)));
+            _lancamentoRepository.GetByIdAsync("000003").Returns(Task.FromResult(new Lancamento()
             {
-                Id = "ABC",
+                Id = "000003",
                 Created = DateTime.UtcNow,
                 Operacao = EOperacao.Transferencia,
-                IdContaDestino = "AAA",
-                IdContaOrigem = "BBB",
+                IdContaDestino = "000033",
+                IdContaOrigem = "000044",
                 Valor = 100
             }));
 
-
-            _lancamentoRepository.DeleteAsync("ABC", Arg.Any<CancellationToken>()).Returns(Task.FromResult(long.Parse("1")));
-            _lancamentoRepository.DeleteAsync("0", Arg.Any<CancellationToken>()).Returns(Task.FromResult(long.Parse("0")));
-
-
-            _lancamentoRepository.UpdateAsync(Arg.Any<Expression<Func<Lancamento, bool>>>(), Arg.Is<Lancamento>(x => x.Id == "0"), Arg.Any<ReplaceOptions>()).Returns(Task.FromResult(""));
-            _lancamentoRepository.UpdateAsync(Arg.Any<Expression<Func<Lancamento, bool>>>(), Arg.Is<Lancamento>(x => x.Id == "ABC"), Arg.Any<ReplaceOptions>()).Returns(Task.FromResult("1"));
+            _lancamentoRepository.UpdateAsync(Arg.Any<Expression<Func<Lancamento, bool>>>(), Arg.Is<Lancamento>(x => x.Id == "000077"), Arg.Any<ReplaceOptions>()).Returns(Task.FromResult(""));
+            _lancamentoRepository.UpdateAsync(Arg.Any<Expression<Func<Lancamento, bool>>>(), Arg.Is<Lancamento>(x => x.Id == "000099"), Arg.Any<ReplaceOptions>()).Returns(Task.FromResult("1"));
 
 
-            _contaRepository.GetByIdAsync(Arg.Is<string>("ABC")).Returns(new Conta()
+            _contaRepository.GetByIdAsync(Arg.Is<string>("000100")).Returns(new Conta()
             {
-                Id = "ABC",
-                Numero = "01020-30",
+                Id = "000100",
+                Numero = "0102030",
                 Created = DateTime.UtcNow,
             });
-            _contaRepository.GetByIdAsync(Arg.Is<string>("1")).Returns(new Conta(100)
+
+            _contaRepository.AtualizaSaldoAsync("000100", Arg.Any<decimal>()).Returns(true);
+
+            _contaRepository.GetByIdAsync(Arg.Is<string>("000101")).Returns(new Conta(100)
             {
-                Id = "1",
-                Numero = "01020-30",
+                Id = "000101",
+                Numero = "0102030",
                 Created = DateTime.UtcNow,
             });
-            _contaRepository.GetByIdAsync(Arg.Is<string>("2")).Returns(new Conta(100)
+
+            _contaRepository.AtualizaSaldoAsync("000101", Arg.Any<decimal>()).Returns(false);
+
+            _contaRepository.GetByIdAsync(Arg.Is<string>("000102")).Returns(new Conta(100)
             {
-                Id = "2",
-                Numero = "01020-30",
+                Id = "000102",
+                Numero = "0102030",
                 Created = DateTime.UtcNow,
             });
+
+            _contaRepository.AtualizaSaldoAsync("000102", Arg.Any<decimal>()).Returns(true);
+
+
             _contaRepository.GetByIdAsync(Arg.Is<string>("3")).Returns(new Conta(100)
             {
-                Id = "3",
-                Numero = "01020-30",
+                Id = "000103",
+                Numero = "0102030",
                 Created = DateTime.UtcNow,
             });
             _contaRepository.GetByIdAsync("0").Returns(default(Conta));
-            _contaRepository.AtualizaSaldoAsync("2", Arg.Any<decimal>()).Returns(true);
-            _contaRepository.AtualizaSaldoAsync("3", Arg.Any<decimal>()).Returns(true);
-            _contaRepository.AtualizaSaldoAsync("ABC", Arg.Any<decimal>()).Returns(true);
-            _contaRepository.AtualizaSaldoAsync("1", Arg.Any<decimal>()).Returns(false);
+            _contaRepository.AtualizaSaldoAsync("000103", Arg.Any<decimal>()).Returns(true);
+
+
+            _lancamentoRepository.DeleteAsync("000055", Arg.Any<CancellationToken>()).Returns(Task.FromResult(long.Parse("1")));
+            _lancamentoRepository.DeleteAsync("000066", Arg.Any<CancellationToken>()).Returns(Task.FromResult(long.Parse("0")));
+
         }
 
         [Fact]
@@ -111,10 +118,10 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = (EOperacao)1234,
-                IdContaDestino = "01020-30",
-                IdContaOrigem = "01030-20",
+                IdContaDestino = "0102030",
+                IdContaOrigem = "0102040",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
@@ -128,10 +135,10 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = EOperacao.Deposito,
                 IdContaDestino = "",
-                IdContaOrigem = "01030-20",
+                IdContaOrigem = "0103020",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
@@ -146,9 +153,9 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = EOperacao.Saque,
-                IdContaDestino = "01020-30",
+                IdContaDestino = "010230",
                 IdContaOrigem = "",
                 Valor = 100
             };
@@ -163,9 +170,9 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = EOperacao.Transferencia,
-                IdContaDestino = "01020-30",
+                IdContaDestino = "010230",
                 IdContaOrigem = "",
                 Valor = 100
             };
@@ -180,10 +187,10 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = EOperacao.Transferencia,
                 IdContaDestino = "",
-                IdContaOrigem = "01020-30",
+                IdContaOrigem = "010230",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
@@ -197,10 +204,10 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = EOperacao.Transferencia,
-                IdContaDestino = "01020-20",
-                IdContaOrigem = "01020-30",
+                IdContaDestino = "010220",
+                IdContaOrigem = "010230",
                 Valor = 0
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
@@ -214,10 +221,10 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = EOperacao.Deposito,
                 IdContaDestino = "",
-                IdContaOrigem = "01030-20",
+                IdContaOrigem = "010320",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
@@ -231,10 +238,10 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = EOperacao.Transferencia,
                 IdContaDestino = "",
-                IdContaOrigem = "01020-30",
+                IdContaOrigem = "010230",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
@@ -264,9 +271,9 @@ namespace DigitalBank.UnitTest
         [Fact]
         public async void TestGetLancamentoOk()
         {
-            var result = await _lancamentoAppService.GetByIdAsync<LancamentoResponse>("1");
+            var result = await _lancamentoAppService.GetByIdAsync<LancamentoResponse>("000003");
             Assert.True(result.StatusCode == HttpStatusCode.OK);
-            Assert.True(result.Value.Id == "ABC");
+            Assert.True(result.Value.Id == "000003");
             Assert.True(result.Errors == null);
         }
 
@@ -291,7 +298,7 @@ namespace DigitalBank.UnitTest
         [Fact]
         public async void TesteDeleteok()
         {
-            var result = await _lancamentoAppService.DeleteAsync("ABC", _cancellationToken);
+            var result = await _lancamentoAppService.DeleteAsync("000055", _cancellationToken);
             Assert.True(result.StatusCode == HttpStatusCode.OK);
             Assert.True(result.Value == 1);
             Assert.True(result.Errors == null);
@@ -302,8 +309,8 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
-                Operacao = (EOperacao)111,
+                Id = "0102050",
+                Operacao = (EOperacao)43434,
                 IdContaDestino = "",
                 IdContaOrigem = "",
                 Valor = 100
@@ -329,7 +336,7 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "0102050",
                 Operacao = EOperacao.Deposito,
                 IdContaDestino = "0",
                 IdContaOrigem = "",
@@ -346,15 +353,15 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Deposito,
-                IdContaDestino = "ABC",
+                IdContaDestino = "000100",
                 IdContaOrigem = "",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
             Assert.True(result.StatusCode == HttpStatusCode.Created);
-            Assert.True(result.Value == "ABC");
+            Assert.True(result.Value == "000001");
             Assert.True(result.Errors == null);
         }
 
@@ -364,7 +371,7 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Saque,
                 IdContaDestino = "",
                 IdContaOrigem = "0",
@@ -381,10 +388,10 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Saque,
                 IdContaDestino = "",
-                IdContaOrigem = "ABC",
+                IdContaOrigem = "000100",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
@@ -398,15 +405,15 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Saque,
                 IdContaDestino = "",
-                IdContaOrigem = "2",
+                IdContaOrigem = "000102",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
             Assert.True(result.StatusCode == HttpStatusCode.Created);
-            Assert.True(result.Value == "ABC");
+            Assert.True(result.Value == "000001");
             Assert.True(result.Errors == null);
         }
 
@@ -415,7 +422,7 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Transferencia,
                 IdContaDestino = "",
                 IdContaOrigem = "",
@@ -432,7 +439,7 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Transferencia,
                 IdContaDestino = "",
                 IdContaOrigem = "",
@@ -450,7 +457,7 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Transferencia,
                 IdContaDestino = "1",
                 IdContaOrigem = "0",
@@ -467,7 +474,7 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Transferencia,
                 IdContaDestino = "0",
                 IdContaOrigem = "1",
@@ -484,9 +491,9 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Transferencia,
-                IdContaDestino = "2",
+                IdContaDestino = "000102",
                 IdContaOrigem = "3",
                 Valor = 200
             };
@@ -501,15 +508,15 @@ namespace DigitalBank.UnitTest
         {
             var lancamento = new LancamentoRequest()
             {
-                Id = "ABC",
+                Id = "000001",
                 Operacao = EOperacao.Transferencia,
                 IdContaDestino = "3",
-                IdContaOrigem = "2",
+                IdContaOrigem = "000102",
                 Valor = 100
             };
             var result = await _lancamentoAppService.CreateAsync(lancamento, _cancellationToken);
             Assert.True(result.StatusCode == HttpStatusCode.Created);
-            Assert.True(result.Value == "ABC");
+            Assert.True(result.Value == "000001");
             Assert.True(result.Errors == null);
         }
 

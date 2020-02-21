@@ -29,7 +29,6 @@ namespace DigitalBank.UnitTest
             _contaRepository = Substitute.For<IContaRepository>();
             _contaService = new ContaService(_contaRepository);
             _contaAppService = new ContaAppService(_contaService);
-
             Setup();
         }
 
