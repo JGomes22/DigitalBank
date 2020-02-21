@@ -20,7 +20,7 @@ Link do projeto: https://github.com/JGomes22/DigitalBank
 
 Clone o projeto em:  https://github.com/JGomes22/DigitalBank.git
 
-Realize o download do Docker:  https://www.docker.com/get-started
+Realize o download e instalação do Docker:  https://www.docker.com/get-started
 
 Para executar a aplicação localmente, navegue até o diretório onde foi realizado o clone, pelo CMD (prompt de comando).
 Exemplo: cd C:\Temp\GitHub\DigitalBank
