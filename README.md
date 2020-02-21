@@ -28,6 +28,7 @@ Exemplo: cd C:\Temp\GitHub\DigitalBank
 Execute o comando: docker-compose up --build -d
 
 Apis disponíveis em http://localhost:5000/swagger
+
 Obs: Para testar a api de autenticação utilize as credenciais abaixo:
 user: admin
 password: password
